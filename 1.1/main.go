@@ -9,11 +9,12 @@ import (
 func main() {
     
     paresedData, _ := os.ReadFile("./input.1.1.txt")
-
+    // make sure to add "\n" to sum the last calibration number, it's not a bug, it's a feature ;)
+    paresedDatas := string(paresedData) + "\n"
     first, last := 0, 0
     var sum int64 = 0
     dFound := false
-    for _, ch := range paresedData {
+    for _, ch := range paresedDatas {
         chs := string(ch)
         i, err := strconv.ParseInt(chs, 10, 64) 
 
